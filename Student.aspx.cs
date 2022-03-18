@@ -13,5 +13,15 @@ namespace DatabaseCoursework
         {
 
         }
+
+        protected void FormView2_PageIndexChanging(object sender, FormViewPageEventArgs e)
+        {
+
+        }
+
+        protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
