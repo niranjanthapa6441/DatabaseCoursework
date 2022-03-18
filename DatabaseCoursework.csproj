@@ -101,9 +101,11 @@
     <Content Include="Address.aspx" />
     <Content Include="Department.aspx" />
     <Content Include="Module.aspx" />
+    <Content Include="Payment.aspx" />
     <Content Include="Result.aspx" />
     <Content Include="Student.aspx" />
     <Content Include="Teacher.aspx" />
+    <Content Include="TeacherModule.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -128,6 +130,13 @@
     <Compile Include="Module.aspx.designer.cs">
       <DependentUpon>Module.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Payment.aspx.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Payment.aspx.designer.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Result.aspx.cs">
       <DependentUpon>Result.aspx</DependentUpon>
@@ -149,6 +158,13 @@
     </Compile>
     <Compile Include="Teacher.aspx.designer.cs">
       <DependentUpon>Teacher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherModule.aspx.cs">
+      <DependentUpon>TeacherModule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeacherModule.aspx.designer.cs">
+      <DependentUpon>TeacherModule.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
