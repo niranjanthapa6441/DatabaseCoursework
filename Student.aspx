@@ -100,16 +100,16 @@ JOIN COURSEWORK.ADDRESS ON PERSON_ADDRESS.ADDRESS_ID = ADDRESS.ID"></asp:SqlData
                     &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
                 </EditItemTemplate>
                 <InsertItemTemplate>
-                    ID:
+                    Id:
                     <asp:TextBox ID="IDTextBox" runat="server" Text='<%# Bind("ID") %>' />
                     <br />
-                    COLLEGE_EMAIL:
+                    College Email:
                     <asp:TextBox ID="COLLEGE_EMAILTextBox" runat="server" Text='<%# Bind("COLLEGE_EMAIL") %>' />
                     <br />
-                    JOINING_DATE:
+                    Joining Date:
                     <asp:TextBox ID="JOINING_DATETextBox" runat="server" Text='<%# Bind("JOINING_DATE") %>' />
                     <br />
-                    PERSONS_ID:
+                    Email:
                     <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource5" DataTextField="EMAIL" DataValueField="ID" Text='<%# Bind("PERSONS_ID") %>'>
                     </asp:DropDownList>
                     <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:Coursework %>" ProviderName="<%$ ConnectionStrings:Coursework.ProviderName %>" SelectCommand="SELECT P.ID ,P.EMAIL FROM PERSONS P"></asp:SqlDataSource>
@@ -118,21 +118,7 @@ JOIN COURSEWORK.ADDRESS ON PERSON_ADDRESS.ADDRESS_ID = ADDRESS.ID"></asp:SqlData
                     &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
                 </InsertItemTemplate>
                 <ItemTemplate>
-                    College Id:
-                    <asp:Label ID="IDLabel" runat="server" Text='<%# Bind("ID") %>' />
-                    <br />
-                    College Email:
-                    <asp:Label ID="COLLEGE_EMAILLabel" runat="server" Text='<%# Bind("COLLEGE_EMAIL") %>' />
-                    <br />
-                    Joining Date:
-                    <asp:Label ID="JOINING_DATELabel" runat="server" Text='<%# Bind("JOINING_DATE") %>' />
-                    <br />
-                    Email:
-                    <asp:Label ID="PERSONS_IDLabel" runat="server" Text='<%# Eval("PERSONS_ID") %>' />
-                    <br />
-                    <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit" />
-                    &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" />
-                    &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="New" />
+                    <asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="Add New Student" />
                 </ItemTemplate>
             </asp:FormView>
             <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:Coursework %>" 
@@ -155,7 +141,7 @@ JOIN COURSEWORK.ADDRESS ON PERSON_ADDRESS.ADDRESS_ID = ADDRESS.ID"></asp:SqlData
                 </UpdateParameters>
             </asp:SqlDataSource>
             <br />
-            <asp:FormView ID="FormView3" runat="server" DataKeyNames="ID" DataSourceID="SqlDataSource4">
+            <asp:FormView ID="FormView6" runat="server" DataKeyNames="ID" DataSourceID="SqlDataSource4">
                 <EditItemTemplate>
                     ID:
                     <asp:Label ID="IDLabel1" runat="server" Text='<%# Eval("ID") %>' />
@@ -163,11 +149,11 @@ JOIN COURSEWORK.ADDRESS ON PERSON_ADDRESS.ADDRESS_ID = ADDRESS.ID"></asp:SqlData
                     COUNTRY:
                     <asp:TextBox ID="COUNTRYTextBox" runat="server" Text='<%# Bind("COUNTRY") %>' />
                     <br />
-                    STATE:
-                    <asp:TextBox ID="STATETextBox" runat="server" Text='<%# Bind("STATE") %>' />
-                    <br />
                     CITY:
                     <asp:TextBox ID="CITYTextBox" runat="server" Text='<%# Bind("CITY") %>' />
+                    <br />
+                    STATE:
+                    <asp:TextBox ID="STATETextBox" runat="server" Text='<%# Bind("STATE") %>' />
                     <br />
                     STREET:
                     <asp:TextBox ID="STREETTextBox" runat="server" Text='<%# Bind("STREET") %>' />
@@ -182,11 +168,11 @@ JOIN COURSEWORK.ADDRESS ON PERSON_ADDRESS.ADDRESS_ID = ADDRESS.ID"></asp:SqlData
                     COUNTRY:
                     <asp:TextBox ID="COUNTRYTextBox" runat="server" Text='<%# Bind("COUNTRY") %>' />
                     <br />
-                    STATE:
-                    <asp:TextBox ID="STATETextBox" runat="server" Text='<%# Bind("STATE") %>' />
-                    <br />
                     CITY:
                     <asp:TextBox ID="CITYTextBox" runat="server" Text='<%# Bind("CITY") %>' />
+                    <br />
+                    STATE:
+                    <asp:TextBox ID="STATETextBox" runat="server" Text='<%# Bind("STATE") %>' />
                     <br />
                     STREET:
                     <asp:TextBox ID="STREETTextBox" runat="server" Text='<%# Bind("STREET") %>' />
@@ -195,45 +181,22 @@ JOIN COURSEWORK.ADDRESS ON PERSON_ADDRESS.ADDRESS_ID = ADDRESS.ID"></asp:SqlData
                     &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
                 </InsertItemTemplate>
                 <ItemTemplate>
-                    ID:
-                    <asp:Label ID="IDLabel" runat="server" Text='<%# Eval("ID") %>' />
-                    <br />
-                    COUNTRY:
-                    <asp:Label ID="COUNTRYLabel" runat="server" Text='<%# Bind("COUNTRY") %>' />
-                    <br />
-                    STATE:
-                    <asp:Label ID="STATELabel" runat="server" Text='<%# Bind("STATE") %>' />
-                    <br />
-                    CITY:
-                    <asp:Label ID="CITYLabel" runat="server" Text='<%# Bind("CITY") %>' />
-                    <br />
-                    STREET:
-                    <asp:Label ID="STREETLabel" runat="server" Text='<%# Bind("STREET") %>' />
-                    <br />
-                    <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit" />
-                    &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" />
-                    &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="New" />
+                    <asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="Provide Student Address" />
                 </ItemTemplate>
             </asp:FormView>
-            <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:Coursework %>" DeleteCommand="DELETE FROM &quot;ADDRESS&quot; WHERE &quot;ID&quot; = ?" InsertCommand="INSERT INTO &quot;ADDRESS&quot; (&quot;ID&quot;, &quot;COUNTRY&quot;, &quot;STATE&quot;, &quot;CITY&quot;, &quot;STREET&quot;) VALUES (?, ?, ?, ?, ?)" ProviderName="<%$ ConnectionStrings:Coursework.ProviderName %>" SelectCommand="SELECT &quot;ID&quot;, &quot;COUNTRY&quot;, &quot;STATE&quot;, &quot;CITY&quot;, &quot;STREET&quot; FROM &quot;ADDRESS&quot;" UpdateCommand="UPDATE &quot;ADDRESS&quot; SET &quot;COUNTRY&quot; = ?, &quot;STATE&quot; = ?, &quot;CITY&quot; = ?, &quot;STREET&quot; = ? WHERE &quot;ID&quot; = ?">
-                <DeleteParameters>
-                    <asp:Parameter Name="ID" Type="String" />
-                </DeleteParameters>
+            <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:Coursework %>" 
+                DeleteCommand="DELETE FROM &quot;ADDRESS&quot; WHERE &quot;ID&quot; = ?" 
+                InsertCommand="INSERT INTO &quot;ADDRESS&quot; (&quot;ID&quot;, &quot;COUNTRY&quot;, &quot;CITY&quot;, &quot;STATE&quot;, &quot;STREET&quot;) VALUES (:ID, :COUNTRY, :STATE, :CITY, :STREET)" ProviderName="<%$ ConnectionStrings:Coursework.ProviderName %>" 
+                SelectCommand="SELECT &quot;ID&quot;, &quot;COUNTRY&quot;, &quot;CITY&quot;, &quot;STATE&quot;, &quot;STREET&quot; FROM &quot;ADDRESS&quot;" UpdateCommand="UPDATE &quot;ADDRESS&quot; SET &quot;COUNTRY&quot; = ?, &quot;CITY&quot; = ?, &quot;STATE&quot; = ?, &quot;STREET&quot; = ? WHERE &quot;ID&quot; = ?">
                 <InsertParameters>
                     <asp:Parameter Name="ID" Type="String" />
                     <asp:Parameter Name="COUNTRY" Type="String" />
-                    <asp:Parameter Name="STATE" Type="String" />
                     <asp:Parameter Name="CITY" Type="String" />
+                    <asp:Parameter Name="STATE" Type="String" />
                     <asp:Parameter Name="STREET" Type="String" />
                 </InsertParameters>
-                <UpdateParameters>
-                    <asp:Parameter Name="COUNTRY" Type="String" />
-                    <asp:Parameter Name="STATE" Type="String" />
-                    <asp:Parameter Name="CITY" Type="String" />
-                    <asp:Parameter Name="STREET" Type="String" />
-                    <asp:Parameter Name="ID" Type="String" />
-                </UpdateParameters>
             </asp:SqlDataSource>
+            <br />
             <asp:FormView ID="FormView4" runat="server" DataKeyNames="PERSONS_ID,ADDRESS_ID" DataSourceID="SqlDataSource6">
                 <EditItemTemplate>
                     PERSONS_ID:
@@ -246,12 +209,12 @@ JOIN COURSEWORK.ADDRESS ON PERSON_ADDRESS.ADDRESS_ID = ADDRESS.ID"></asp:SqlData
                     &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
                 </EditItemTemplate>
                 <InsertItemTemplate>
-                    PERSONS_ID:
+                    Email:
                     <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource7" DataTextField="EMAIL" DataValueField="ID" Text='<%# Bind("PERSONS_ID") %>' OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
                     </asp:DropDownList>
                     <asp:SqlDataSource ID="SqlDataSource7" runat="server" ConnectionString="<%$ ConnectionStrings:Coursework %>" ProviderName="<%$ ConnectionStrings:Coursework.ProviderName %>" SelectCommand="SELECT &quot;ID&quot;, &quot;EMAIL&quot; FROM &quot;PERSONS&quot;"></asp:SqlDataSource>
                     <br />
-                    ADDRESS_ID:
+                    Address:
                     <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="SqlDataSource8" DataTextField="ADDRESS" DataValueField="ID" Text='<%# Bind("ADDRESS_ID") %>'>
                     </asp:DropDownList>
                     <asp:SqlDataSource ID="SqlDataSource8" runat="server" ConnectionString="<%$ ConnectionStrings:Coursework %>" ProviderName="<%$ ConnectionStrings:Coursework.ProviderName %>" SelectCommand="SELECT A.ID, A.COUNTRY|| A.STATE|| A.CITY||A.STREET AS ADDRESS FROM ADDRESS A "></asp:SqlDataSource>
@@ -260,14 +223,7 @@ JOIN COURSEWORK.ADDRESS ON PERSON_ADDRESS.ADDRESS_ID = ADDRESS.ID"></asp:SqlData
 &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
                 </InsertItemTemplate>
                 <ItemTemplate>
-                    PERSONS_ID:
-                    <asp:Label ID="PERSONS_IDLabel" runat="server" Text='<%# Eval("PERSONS_ID") %>' />
-                    <br />
-                    ADDRESS_ID:
-                    <asp:Label ID="ADDRESS_IDLabel" runat="server" Text='<%# Eval("ADDRESS_ID") %>' />
-                    <br />
-                    <asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" />
-                    &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="New" />
+                   <asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="Add Student Address" />
                 </ItemTemplate>
             </asp:FormView>
             <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:Coursework %>" 
@@ -281,6 +237,70 @@ JOIN COURSEWORK.ADDRESS ON PERSON_ADDRESS.ADDRESS_ID = ADDRESS.ID"></asp:SqlData
                     <asp:Parameter Name="PERSONS_ID" Type="String" />
                     <asp:Parameter Name="ADDRESS_ID" Type="String" />
                 </InsertParameters>
+            </asp:SqlDataSource>
+            <br />
+            <asp:FormView ID="FormView5" runat="server" DataKeyNames="ID" DataSourceID="SqlDataSource5">
+                <EditItemTemplate>
+                    Id:
+                    <asp:TextBox ID="IDTextBox" runat="server" Text='<%# Bind("ID") %>' />
+                    <br />
+                    Email:
+                    <asp:DropDownList ID="DropDownList4" runat="server" DataSourceID="SqlDataSource8" DataTextField="COLLEGE_EMAIL" DataValueField="ID" Text='<%# Bind("STUDENTS_PERSONS_ID") %>'>
+                    </asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSource8" runat="server" ConnectionString="<%$ ConnectionStrings:Coursework %>" ProviderName="<%$ ConnectionStrings:Coursework.ProviderName %>" SelectCommand="SELECT P.ID,S.ID AS COLLEGE_ID,P.FIRST_NAME ||' '|| P.MIDDLE_NAME ||' ' ||P.LAST_NAME  AS NAME,P.PHONE_NUMBER,P.EMAIL,P.DATE_OF_BIRTH,S.COLLEGE_EMAIL,S.JOINING_DATE,
+A.COUNTRY||' '|| A.STATE||' '||A.CITY||' '||A.STREET AS ADDRESS   FROM STUDENTS S
+JOIN PERSONS P ON P.ID=S.PERSONS_ID
+JOIN PERSON_ADDRESS PA ON PA.PERSONS_ID=P.ID
+JOIN ADDRESS A ON A.ID=PA.ADDRESS_ID"></asp:SqlDataSource>
+                    <br />
+                    Module Name:
+                    <asp:DropDownList ID="DropDownList5" runat="server" DataSourceID="SqlDataSource7" DataTextField="MODULE_NAME" DataValueField="ID" Text='<%# Bind("MODULES_ID") %>'>
+                    </asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSource7" runat="server" ConnectionString="<%$ ConnectionStrings:Coursework %>" ProviderName="<%$ ConnectionStrings:Coursework.ProviderName %>" SelectCommand="SELECT &quot;ID&quot;, &quot;MODULE_NAME&quot; FROM &quot;MODULES&quot;"></asp:SqlDataSource>
+                    <br />
+                    <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
+                    &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                </EditItemTemplate>
+                <InsertItemTemplate>
+                    Id:
+                    <asp:TextBox ID="IDTextBox" runat="server" Text='<%# Bind("ID") %>' />
+                    <br />
+                    Email:
+                    <asp:DropDownList ID="DropDownList4" runat="server" DataSourceID="SqlDataSource8" DataTextField="COLLEGE_EMAIL" DataValueField="ID" Text='<%# Bind("STUDENTS_PERSONS_ID") %>'>
+                    </asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSource8" runat="server" ConnectionString="<%$ ConnectionStrings:Coursework %>" ProviderName="<%$ ConnectionStrings:Coursework.ProviderName %>" SelectCommand="SELECT P.ID,S.ID AS COLLEGE_ID,P.FIRST_NAME ||' '|| P.MIDDLE_NAME ||' ' ||P.LAST_NAME  AS NAME,P.PHONE_NUMBER,P.EMAIL,P.DATE_OF_BIRTH,S.COLLEGE_EMAIL,S.JOINING_DATE,
+A.COUNTRY||' '|| A.STATE||' '||A.CITY||' '||A.STREET AS ADDRESS   FROM STUDENTS S
+JOIN PERSONS P ON P.ID=S.PERSONS_ID
+JOIN PERSON_ADDRESS PA ON PA.PERSONS_ID=P.ID
+JOIN ADDRESS A ON A.ID=PA.ADDRESS_ID"></asp:SqlDataSource>
+                    <br />
+                    Module Name:
+                    <asp:DropDownList ID="DropDownList5" runat="server" DataSourceID="SqlDataSource7" DataTextField="MODULE_NAME" DataValueField="ID" Text='<%# Bind("MODULES_ID") %>'>
+                    </asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSource7" runat="server" ConnectionString="<%$ ConnectionStrings:Coursework %>" ProviderName="<%$ ConnectionStrings:Coursework.ProviderName %>" SelectCommand="SELECT &quot;ID&quot;, &quot;MODULE_NAME&quot; FROM &quot;MODULES&quot;"></asp:SqlDataSource>
+                    <br />
+                    <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
+                    &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                </InsertItemTemplate>
+                <ItemTemplate>
+                    <asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="Add Module to Student" />
+                </ItemTemplate>
+            </asp:FormView>
+            <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:Coursework %>" DeleteCommand="DELETE FROM &quot;STUDENTS_MODULES&quot; WHERE &quot;ID&quot; = ?" 
+                InsertCommand="INSERT INTO &quot;STUDENTS_MODULES&quot; (&quot;ID&quot;, &quot;STUDENTS_PERSONS_ID&quot;, &quot;MODULES_ID&quot;) VALUES (:ID, :STUDENTS_PERSONS_ID, :MODULES_ID)" ProviderName="<%$ ConnectionStrings:Coursework.ProviderName %>" SelectCommand="SELECT &quot;ID&quot;, &quot;STUDENTS_PERSONS_ID&quot;, &quot;MODULES_ID&quot; FROM &quot;STUDENTS_MODULES&quot;" UpdateCommand="UPDATE &quot;STUDENTS_MODULES&quot; SET &quot;STUDENTS_PERSONS_ID&quot; = ?, &quot;MODULES_ID&quot; = ? WHERE &quot;ID&quot; = ?">
+                <DeleteParameters>
+                    <asp:Parameter Name="ID" Type="Decimal" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="ID" Type="Decimal" />
+                    <asp:Parameter Name="STUDENTS_PERSONS_ID" Type="String" />
+                    <asp:Parameter Name="MODULES_ID" Type="String" />
+                </InsertParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="STUDENTS_PERSONS_ID" Type="String" />
+                    <asp:Parameter Name="MODULES_ID" Type="String" />
+                    <asp:Parameter Name="ID" Type="Decimal" />
+                </UpdateParameters>
             </asp:SqlDataSource>
             <br />
         </div>

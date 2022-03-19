@@ -23,6 +23,7 @@ JOIN PERSONS P ON P.ID=S.PERSONS_ID
 JOIN PERSON_ADDRESS PA ON PA.PERSONS_ID=P.ID
 JOIN ADDRESS A ON A.ID=PA.ADDRESS_ID"></asp:SqlDataSource>
         </div>
+        <br />
         <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataSourceID="SqlDataSource1" Height="50px" Width="125px">
             <Fields>
                 <asp:BoundField DataField="COLLEGE_ID" HeaderText="College Id:" SortExpression="COLLEGE_ID" />
