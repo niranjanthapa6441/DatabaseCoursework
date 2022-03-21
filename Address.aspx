@@ -4,7 +4,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Address</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -33,42 +35,52 @@
                 </UpdateParameters>
             </asp:SqlDataSource>
             <br />
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="SqlDataSource1">
+            <div class="container">    
+            <asp:GridView CSSClass="table table-condensed table-hover" ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="SqlDataSource1">
                 <Columns>
-                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                     <asp:BoundField DataField="COUNTRY" HeaderText="COUNTRY" SortExpression="COUNTRY" />
                     <asp:BoundField DataField="ID" HeaderText="ID" ReadOnly="True" SortExpression="ID" />
                     <asp:BoundField DataField="STATE" HeaderText="STATE" SortExpression="STATE" />
                     <asp:BoundField DataField="CITY" HeaderText="CITY" SortExpression="CITY" />
                     <asp:BoundField DataField="STREET" HeaderText="STREET" SortExpression="STREET" />
+                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                 </Columns>
             </asp:GridView>
             <br />
             <asp:FormView ID="FormView1" runat="server" DataKeyNames="ID" DataSourceID="SqlDataSource1">
                 <InsertItemTemplate>
-                    COUNTRY:
-                    <asp:TextBox ID="COUNTRYTextBox" runat="server" Text='<%# Bind("COUNTRY") %>' />
+                    <div class="container">
+                        <div class="align-content-xl-center">
+                            <div class="align-content-center">
+                                <asp:Label CSSClass="form-label" ID="IDLABEL" runat="server" Text="Id:"/>
+                    <asp:TextBox CSSClass="form-control" ID="COUNTRYTextBox" runat="server" Text='<%# Bind("COUNTRY") %>' />
                     <br />
-                    ID:
-                    <asp:TextBox ID="IDTextBox" runat="server" Text='<%# Bind("ID") %>' />
+                    <asp:Label CSSClass="form-label" ID="Label1" runat="server" Text="Country:"/>
+                    <asp:TextBox CSSClass="form-control" ID="IDTextBox" runat="server" Text='<%# Bind("ID") %>' />
                     <br />
-                    STATE:
-                    <asp:TextBox ID="STATETextBox" runat="server" Text='<%# Bind("STATE") %>' />
+                    <asp:Label CSSClass="form-label" ID="Label2" runat="server" Text="State:"/>
+                    <asp:TextBox CSSClass="form-control" ID="STATETextBox" runat="server" Text='<%# Bind("STATE") %>' />
                     <br />
-                    CITY:
-                    <asp:TextBox ID="CITYTextBox" runat="server" Text='<%# Bind("CITY") %>' />
+                    <asp:Label CSSClass="form-label" ID="Label3" runat="server" Text="City:"/>
+                    <asp:TextBox CSSClass="form-control" ID="CITYTextBox" runat="server" Text='<%# Bind("CITY") %>' />
                     <br />
-                    STREET:
-                    <asp:TextBox ID="STREETTextBox" runat="server" Text='<%# Bind("STREET") %>' />
+                    <asp:Label CSSClass="form-label" ID="Label4" runat="server" Text="Street:"/>
+                    <asp:TextBox CSSClass="form-control" ID="STREETTextBox" runat="server" Text='<%# Bind("STREET") %>' />
                     <br />
-                    <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
-                    &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                    <asp:LinkButton CSSClass="btn btn-success" ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
+                    &nbsp;<asp:LinkButton CSSClass="btn btn-success" ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                            </div>
+                        </div>
+                    </div>
                 </InsertItemTemplate>
                 <ItemTemplate>
-                    <asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="Insert" />
+                    <asp:LinkButton CSSClass="btn btn-dark" ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="Insert Address" />
                 </ItemTemplate>
             </asp:FormView>
         </div>
+    </div>
     </form>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 </body>
 </html>
