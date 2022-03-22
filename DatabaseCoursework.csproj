@@ -100,9 +100,10 @@
   <ItemGroup>
     <Content Include="Address.aspx" />
     <Content Include="Department.aspx" />
+    <Content Include="Home.css" />
+    <Content Include="main.css" />
     <Content Include="Module.aspx" />
     <Content Include="Payment.aspx" />
-    <Content Include="Person.aspx" />
     <Content Include="PersonDetails.aspx" />
     <Content Include="Result.aspx" />
     <Content Include="Student.aspx" />
@@ -140,13 +141,6 @@
     </Compile>
     <Compile Include="Payment.aspx.designer.cs">
       <DependentUpon>Payment.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Person.aspx.cs">
-      <DependentUpon>Person.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Person.aspx.designer.cs">
-      <DependentUpon>Person.aspx</DependentUpon>
     </Compile>
     <Compile Include="PersonDetails.aspx.cs">
       <DependentUpon>PersonDetails.aspx</DependentUpon>
